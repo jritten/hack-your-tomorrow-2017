@@ -19,8 +19,15 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/poker_rooms/1">Games</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Games
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#"><%= image_tag("/games/poker-logo.png", class: "logo-image") %>Poker</a>
+          <a class="dropdown-item" href="#"><%= image_tag("/games/blackjack-logo.png", class: "logo-image") %>Black Jack</a>
+          <a class="dropdown-item" href="#"><%= image_tag("/games/slot-logo.png", class: "logo-image") %>Slot</a>
+        </div>
       </li>
     </ul>
   </div>

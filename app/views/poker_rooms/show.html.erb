@@ -1,18 +1,116 @@
+
 <main class="row">
-  <section class="col-md-2"></section>
   <section class="col-md-8">
-    <div class="poker_table">
-      <%=image_tag "/poker_images/table.png", class: "poker-table"%>
+    <div class="poker-table">
+      <table class="poker-table-position">
+        <tr>
+          <td></td>
+          <td>
+            <%= image_tag("/users/user1.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">kathryn</div>
+          </td>
+          <td>
+            <%= image_tag("/users/user2.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">raymond777</div>
+
+          </td>
+          <td>
+            <%= image_tag("/users/user3.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">juliosims</div>
+
+          </td> <td></td>
+        </tr>
+        <tr>
+          <td>
+            <%= image_tag("/users/user4.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">sebastianscott</div>
+          </td>
+          <td></td>
+          <td>
+            <!-- <% @first_flop.each do |card| %>
+              <%= image_tag(card["image"], class: "flop-image") %>
+            <% end %> -->
+            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
+            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
+            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
+          </td>
+          <td></td>
+          <td>
+            <%= image_tag("/users/user6.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">ken1960</div>
+
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <%= image_tag("/users/user7.png", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+            <div class="username">stephanie28</div>
+          </td>
+          <td>
+            <%= image_tag("/users/user8.jpg", class: "main-player-image") %><br>
+            <% @first_hand.each do |card| %>
+              <%= image_tag(card["image"], class: "main-hand-image") %>
+            <% end %>
+          </td>
+          <td>
+            <%= image_tag("/users/user5.jpg", class: "player-image") %>
+            <%= image_tag("/poker/hand.png", class: "hand-image") %>
+              <div class="username">johnlee</div>
+          </td>
+          <td></td>
+        </tr>
+      </table>
     </div>
+    <div class="row poker-btn-container">
+      <div class="col-md-4 poker-btn-box">
+        <button type="button" name="button" class="poker-btn green">FOLD</button>
+      </div>
+      <div class="col-md-4 poker-btn-box">
+        <button type="button" name="button" class="poker-btn yellow">CALL</button>
+      </div>
+      <div class="col-md-4 poker-btn-box">
+        <button type="button" name="button" class="poker-btn red">RAISE</button>
+      </div>
+    </div>
+    <div class="row poker-token-container">
+      <div class="col-md-12"><%= image_tag("/poker/current-token.png", class: "player-image") %> 600</div>
+    </div>
+  </section>
 
 
-
-    <ul id="messages">
-    </ul>
-
-    <form id="chat-form">
-        <label>say something: <input type="text" name="comment"></label>
-        <button type="submit" name="button">Submit</button>
+  <section class="col-md-4 chat-container">
+    <div id="messages">
+    </div>
+    <form id="chat-form" action="#" method="post">
+      <textarea placeholder="comment" class="form-control" name="comment" ></textarea>
+      <div>
+        <button type="submit" name="button" class="btn btn-secondary btn-chat">Send</span></button>
+      </div>
     </form>
+
+    <div class="loader-back"></div>
+    <div class="loader"></div>
   </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script>
+$(function() {
+$('img').lazyload({
+    event: 'sporty'
+});
+$(window).on('load', function() {
+    var timeout = setTimeout(function() {
+        $('img').trigger('sporty');
+        $('.loader-back').hide();
+        $('.loader').hide();
+    }, 3000);
+});
+});
+</script>
