@@ -1,32 +1,44 @@
 <h1> Hi <%= @user.first_name %> Welcome to U.S Bank </h1>
 
 
-<div class = "border">
+<!-- <div class = "border">
   <fieldset>
     <legend> User Balance </legend>
     <p> PrimaryIdentifier: <%= @PrimaryIdentifier %> </p>
   <p> AvailableBalanceAmount: <%= @AvailableBalanceAmount %> </p>
     <p> CurrentBalanceAmount: <%= @CurrentBalanceAmount %> </p>
-    <p> RedactedAccountNumber: <%= @RedactedAccountNumber[-4..-1] %> </p>
+    <p> RedactedAccountNumber: <%= @RedactedAccountNumber %> </p>
 </fieldset>
-</div>
+</div> -->
 
-    <h2> <%= link_to "Checking Account", root_path %> </h2>
-
-    <h2> <%= link_to "Saving Account", root_path %> </h2>
+    <h2> <%= link_to "Savings Account", root_path %> </h2>
 
 
-<div class = "border">
+<!-- <div class = "border">
   <fieldset>
     <legend> Game </legend>
      <p> Transfer_amount: <%= @game.transfer_amount %> </p>
      <p> Tokens: <%= @game.tokens %> </p>
      <p> Total_saved: <%= @game.total_saved %> </p>
   </fieldset>
+</div> -->
+
+<div>
+  <h4>Wallet</h4>
+  <h5>$174</h5>
+
+  <h4>Poker Chips</h4>
+  <h5>$60 in Poker Chips</h5>
+
+  <h4>Winnings</h4>
+  <h5>$40 Saved</h5>
 </div>
 
 <div>
-  <h2> Requirement purchase </h2>
-  <p> 1$ -   </p>
+   <h2> Poker Chips</h2>
+   <p> $1 - $30 in Poker Chips </p>
+   <p> $2 - $60 in Poker Chips </p>
+   <p> $5 - $150 in Poker Chips </p>
+   <p> $10 - $300 in Poker Chips </p>
 </div>
 
