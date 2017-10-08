@@ -10,36 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008090249) do
+ActiveRecord::Schema.define(version: 20171008080246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checkings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "operating_company_identifier"
-    t.integer "product_code"
-    t.integer "primary_identifier"
+    t.string "name"
+    t.string "account_type"
+    t.string "current_balance"
+    t.string "operating_company_identifier"
+    t.string "product_code"
+    t.string "primary_identifier"
+    t.string "transaction_history"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_checkings_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.integer "transfer_amount"
-    t.integer "user_id"
-    t.integer "tokens"
     t.integer "total_saved"
+    t.integer "tokens"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "savings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "operating_company_identifier"
-    t.integer "product_code"
-    t.integer "primary_identifier"
+    t.string "name"
+    t.string "account_type"
+    t.string "operating_company_identifier"
+    t.string "product_code"
+    t.string "primary_identifier"
+    t.string "transaction_history"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
