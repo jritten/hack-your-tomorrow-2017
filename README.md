@@ -1,6 +1,7 @@
 Hack Your Tomorrow 2017
 
 Casino Locale
+
 "Instead of Feeling Bad About Spending, Feel Good About Saving"
 
 Over 100 million American's visit casinos annually generating a revenue of over $60 billion. Nearly half of all casino goers are age 50 or older, and much of this profit comes from these older gamblers. Many older aduluts view the casino as a place to socialize with the community and escape from loneliness and grief. States with large populations of adults over 65, like Michigan, have increased access to casinos resulting in crippling debt and diminished quality of life.
