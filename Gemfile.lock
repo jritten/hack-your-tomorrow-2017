@@ -39,7 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
-    autoprefixer-rails (7.1.0)
+    autoprefixer-rails (7.1.5)
       execjs
     bindex (0.5.0)
     bootstrap (4.0.0.beta)
@@ -59,12 +59,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
     httparty (0.13.7)
       json (~> 1.8)
-=======
-    httparty (0.15.6)
->>>>>>> 1b0c97dd0ea4cf1df3fcb8acce7a0c373bb077bb
       multi_xml (>= 0.5.2)
     i18n (0.8.6)
     jbuilder (2.7.0)
@@ -197,11 +193,7 @@ DEPENDENCIES
   byebug
   dotenv
   faker
-<<<<<<< HEAD
   httparty (~> 0.13.7)
-=======
-  httparty
->>>>>>> 1b0c97dd0ea4cf1df3fcb8acce7a0c373bb077bb
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   listen (>= 3.0.5, < 3.2)
