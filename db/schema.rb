@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008033303) do
+ActiveRecord::Schema.define(version: 20171008080246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,29 @@ ActiveRecord::Schema.define(version: 20171008033303) do
   create_table "checkings", force: :cascade do |t|
     t.string "name"
     t.string "account_type"
-    t.integer "user_id"
-    t.integer "operating_company_identifier"
-    t.integer "product_code"
-    t.integer "primary_identifier"
+    t.string "current_balance"
+    t.string "operating_company_identifier"
+    t.string "product_code"
+    t.string "primary_identifier"
+    t.string "transaction_history"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_checkings_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer "transfer_amount"
+    t.integer "total_saved"
+    t.integer "tokens"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,12 +48,14 @@ ActiveRecord::Schema.define(version: 20171008033303) do
   create_table "savings", force: :cascade do |t|
     t.string "name"
     t.string "account_type"
-    t.integer "user_id"
-    t.integer "operating_company_identifier"
-    t.integer "product_code"
-    t.integer "primary_identifier"
+    t.string "operating_company_identifier"
+    t.string "product_code"
+    t.string "primary_identifier"
+    t.string "transaction_history"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,7 +63,6 @@ ActiveRecord::Schema.define(version: 20171008033303) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "tokens"
     t.string "email"
     t.string "password"
     t.datetime "created_at", null: false

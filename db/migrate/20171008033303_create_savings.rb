@@ -3,10 +3,11 @@ class CreateSavings < ActiveRecord::Migration[5.1]
     create_table :savings do |t|
       t.string :name
       t.string :account_type
-      t.integer :user_id
-      t.integer :operating_company_identifier
-      t.integer :product_code
-      t.integer :primary_identifier
+      t.string :operating_company_identifier
+      t.string :product_code
+      t.string :primary_identifier
+      t.string :transaction_history
+      t.references :user
 
       t.timestamps
     end
