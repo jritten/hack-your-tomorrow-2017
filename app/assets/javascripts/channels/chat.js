@@ -15,9 +15,13 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
     if (minutes < 10) {
       minutes = "0" + minutes
     }
-
-    $('#messages').append('<div class="card message"><div class="card-block"><span class="card-title">Hugo</span><span class="sent-time">' + hours + ':' + minutes + '</span><p class="card-text">' + data['message'] + '</p></div></div>');
-    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+    if ($("#messages").children().length % 2 == 0) {
+      $('#messages').append('<div class="card message"><div class="card-block"><span class="card-title">Kathryn</span><span class="sent-time">' + hours + ':' + minutes + '</span><p class="card-text">' + data['message'] + '</p></div></div>');
+      $("#messages").scrollTop($("#messages")[0].scrollHeight);
+    } else {
+      $('#messages').append('<div class="card message"><div class="card-block"><span class="card-title">John</span><span class="sent-time">' + hours + ':' + minutes + '</span><p class="card-text">' + data['message'] + '</p></div></div>');
+      $("#messages").scrollTop($("#messages")[0].scrollHeight);
+    }
   },
 
   speak: function(message) {
