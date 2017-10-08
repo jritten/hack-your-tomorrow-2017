@@ -5,41 +5,36 @@
 $(document).ready(function() {
   $("#1").on('click', function(e) {
     e.preventDefault();
-    var checkingBalance = $('#checking-balance').text().split("$")[1];
-    updatedChecking = checkingBalance - 1
-    $('#checking-balance').text("$" + updatedChecking);
-    var winnings = $("#winnings").text();
-    $("#winnings").text((parseInt(winnings) + 1));
-    savingsBalance = $("#savings-balance").text().split("$")[1];
-    updatedSaving = savingsBalance - 1
-    // ('#checking-balance').text("$" + updatedSaving);
-    // savings-balance
-    // token-balance
+    transfer(1);
   });
 
   $("#5").on('click', function(e) {
     e.preventDefault();
-    var checkingBalance = $('#checking-balance').text().split("$")[1];
-    updatedChecking = checkingBalance - 5
-    $('#checking-balance').text("$" + updatedChecking)
+    transfer(5);
   });
 
   $("#10").on('click', function(e) {
     e.preventDefault();
-    var checkingBalance = $('#checking-balance').text().split("$")[1];
-    updatedChecking = checkingBalance - 10
-    $('#checking-balance').text("$" + updatedChecking)
+    transfer(10);
   });
 
   $("#50").on('click', function(e) {
     e.preventDefault();
-    var checkingBalance = $('#checking-balance').text().split("$")[1];
-    updatedChecking = checkingBalance - 50
-    $('#checking-balance').text("$" + updatedChecking)
+    transfer(50);
   });
 });
-//
-// checking-balance
-// winnings
-// savings-balance
-// token-balance
+
+var transfer = function(money) {
+  var checkingBalance = $('#checking-balance').text().split("$")[1];
+  var updatedChecking = checkingBalance - money
+  $('#checking-balance').text("$" + updatedChecking);
+
+  var winnings = $("#winnings").text();
+  $("#winnings").text((parseInt(winnings) + money));
+
+  var savingsBalance = $("#savings-balance").text().split("$")[1];
+  $('#savings-balance').text("$" + (parseInt(savingsBalance) + money));
+
+  var tokenBalance = $("#token-balance").text().split("$")[1];
+  $('#token-balance').text("$" + (parseInt(tokenBalance) + money));
+}
