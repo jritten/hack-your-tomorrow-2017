@@ -1,0 +1,27 @@
+<h1> Hi <%= @user.first_name %> Welcome to U.S Bank </h1>
+
+
+<div class = "border">
+  <fieldset>
+    <legend> User Balance </legend>
+    <p> PrimaryIdentifier: <%= @PrimaryIdentifier %> </p>
+  <p> AvailableBalanceAmount: <%= @AvailableBalanceAmount %> </p>
+    <p> CurrentBalanceAmount: <%= @CurrentBalanceAmount %> </p>
+    <p> RedactedAccountNumber: <%= @RedactedAccountNumber[-4..-1] %> </p>
+</fieldset>
+</div>
+
+    <h2> <%= link_to "Checking Account", root_path %> </h2>
+
+    <h2> <%= link_to "Saving Account", root_path %> </h2>
+
+
+<div class = "border">
+  <fieldset>
+    <legend> Game </legend>
+     <p> Transfer_amount: <%= @game.transfer_amount %> </p>
+     <p> Tokens: <%= @game.tokens %> </p>
+     <p> Total_saved: <%= @game.total_saved %> </p>
+  </fieldset>
+</div>
+
