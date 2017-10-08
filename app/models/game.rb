@@ -1,7 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :user
-<<<<<<< HEAD
-=======
+
   has_one :checking, through: :user
   has_one :saving, through: :user
 
@@ -28,5 +27,4 @@ class Game < ApplicationRecord
     # @per_week = @per_month / 4
     @per_day = (@per_month / 30.to_f).ceil
   end
->>>>>>> development
 end
