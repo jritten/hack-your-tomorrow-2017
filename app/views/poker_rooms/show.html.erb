@@ -7,42 +7,42 @@
           <td></td>
           <td>
             <%= image_tag("/users/user1.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">kathryn</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Kathryn</div>
           </td>
           <td>
             <%= image_tag("/users/user2.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">raymond777</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Raymond</div>
 
           </td>
           <td>
             <%= image_tag("/users/user3.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">juliosims</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Juli</div>
 
           </td> <td></td>
         </tr>
         <tr>
           <td>
             <%= image_tag("/users/user4.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">sebastianscott</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Scott</div>
           </td>
           <td></td>
           <td>
             <!-- <% @first_flop.each do |card| %>
               <%= image_tag(card["image"], class: "flop-image") %>
             <% end %> -->
-            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
-            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
-            <%= image_tag("/poker/card-back.png", class: "flop-image") %>
+            <%= image_tag("/poker/card-back.png", class: "flop-image Invisible") %>
+            <%= image_tag("/poker/card-back.png", class: "flop-image Invisible") %>
+            <%= image_tag("/poker/card-back.png", class: "flop-image Invisible") %>
           </td>
-          <td></td>
+          <td><div id="circle"></div></td>
           <td>
             <%= image_tag("/users/user6.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">ken1960</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Ken</div>
 
           </td>
         </tr>
@@ -50,19 +50,20 @@
           <td></td>
           <td>
             <%= image_tag("/users/user7.png", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-            <div class="username">stephanie28</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+            <div class="username">Stephanie</div>
           </td>
           <td>
-            <%= image_tag("/users/user8.jpg", class: "main-player-image") %><br>
+            <%= image_tag("/users/user8.jpg", class: "main-player-image") %>
+            <div class="username">John</div>
             <% @first_hand.each do |card| %>
-              <%= image_tag(card["image"], class: "main-hand-image") %>
+              <%= image_tag(card["image"], class: "main-hand-image Invisible") %>
             <% end %>
           </td>
           <td>
             <%= image_tag("/users/user5.jpg", class: "player-image") %>
-            <%= image_tag("/poker/hand.png", class: "hand-image") %>
-              <div class="username">johnlee</div>
+            <%= image_tag("/poker/hand.png", class: "hand-image Invisible") %>
+              <div class="username">Vivian</div>
           </td>
           <td></td>
         </tr>
@@ -80,7 +81,7 @@
       </div>
     </div>
     <div class="row poker-token-container">
-      <div class="col-md-12"><%= image_tag("/poker/current-token.png", class: "player-image") %> 600</div>
+      <div class="col-md-12"><%= image_tag("/poker/current-token.png", class: "player-image") %> 635</div>
     </div>
   </section>
 
@@ -99,18 +100,35 @@
     <div class="loader"></div>
   </section>
 </main>
+
+<script>
+
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 <script>
 $(function() {
-$('img').lazyload({
-    event: 'sporty'
+  $('img').lazyload({
+      event: 'sporty'
+  });
+
+  $(window).on('load', function() {
+      var timeout = setTimeout(function() {
+          $('img').trigger('sporty');
+          $('.loader-back').hide();
+          $('.loader').hide();
+      }, 2000);
+
+      var timeout2 = setTimeout(function() {
+          for (var i = 0; i < $('.Invisible').length; i++) {
+              setTimeout(function() {
+              $('.Invisible').first().slideDown();
+                $('.Invisible').first().removeClass('Invisible');
+                console.log( $('.Invisible').first());
+              }, 1000);
+          }
+      }, 3000);
+  });
+
 });
-$(window).on('load', function() {
-    var timeout = setTimeout(function() {
-        $('img').trigger('sporty');
-        $('.loader-back').hide();
-        $('.loader').hide();
-    }, 3000);
-});
-});
+
 </script>

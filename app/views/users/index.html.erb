@@ -1,44 +1,72 @@
-<h1> Hi <%= @user.first_name %> Welcome to U.S Bank </h1>
-
-
-<!-- <div class = "border">
-  <fieldset>
-    <legend> User Balance </legend>
-    <p> PrimaryIdentifier: <%= @PrimaryIdentifier %> </p>
-  <p> AvailableBalanceAmount: <%= @AvailableBalanceAmount %> </p>
-    <p> CurrentBalanceAmount: <%= @CurrentBalanceAmount %> </p>
-    <p> RedactedAccountNumber: <%= @RedactedAccountNumber %> </p>
-</fieldset>
-</div> -->
-
-    <h2> <%= link_to "Savings Account", root_path %> </h2>
-
-
-<!-- <div class = "border">
-  <fieldset>
-    <legend> Game </legend>
-     <p> Transfer_amount: <%= @game.transfer_amount %> </p>
-     <p> Tokens: <%= @game.tokens %> </p>
-     <p> Total_saved: <%= @game.total_saved %> </p>
-  </fieldset>
-</div> -->
-
-<div>
-  <h4>Wallet</h4>
-  <h5>$174</h5>
-
-  <h4>Poker Chips</h4>
-  <h5>$60 in Poker Chips</h5>
-
-  <h4>Winnings</h4>
-  <h5>$40 Saved</h5>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <h2>Checking Account</h2>
+    <table class="table account-table">
+      <tr>
+        <th>Wallet</th> <td id="checking-balance">$174</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-4 jackpot">
+    <h4 class="jackpot-amount">Winnings<br><span id="winnings">$40 Saved</span></h4>
+    <%= image_tag("/games/slot-machine.png", class: "slots-machine") %>
+  </div>
+  <div class="col-md-3">
+    <h2>Savings Account</h2>
+    <table class="table account-table">
+      <tr>
+        <th>Balance</th> <td id="savings-balance">$174</td>
+      </tr>
+      <tr>
+        <th>Poker Chips</th> <td id="token-balance">$60</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
+</div>
 </div>
 
-<div>
-   <h2> Poker Chips</h2>
-   <p> $1 - $30 in Poker Chips </p>
-   <p> $2 - $60 in Poker Chips </p>
-   <p> $5 - $150 in Poker Chips </p>
-   <p> $10 - $300 in Poker Chips </p>
-</div>
+<hr class="featurette-divider">
 
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-3 token-converting">
+        <%= image_tag("/games/1-token.png", class: "rounded-circle") %>
+          <h2 class="token-header">$1 = $10 in chips</h2>
+          <p><a href="#"><button class="buying-btn" type="button" name="button">Transfer</button></a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 token-converting">
+          <%= image_tag("/games/50-token.png", class: "rounded-circle") %>
+          <h2 class="token-header">$5 = $50 in chips</h2>
+          <p><a href="#"><button class="buying-btn" type="button" name="button">Transfer</button></a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 token-converting">
+          <%= image_tag("/games/100-token.png", class: "rounded-circle") %>
+          <h2 class="token-header">$10 = $100 in chips</h2>
+          <p><a href="#"><button class="buying-btn" type="button" name="button">Transfer</button></a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 token-converting">
+          <%= image_tag("/games/500-token.png", class: "rounded-circle") %>
+          <h2 class="token-header">$50 = $500 in chips</h2>
+          <p><a href="#"><button class="buying-btn" type="button" name="button">Transfer</button></a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+
+
+
+
+<!-- <h1> Hi <%= @user.first_name %> Welcome to U.S Bank </h1>

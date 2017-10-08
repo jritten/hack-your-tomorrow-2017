@@ -171,7 +171,7 @@
 }
 
 .flop-image {
-  max-width: 70px;
+  max-width: 100px;
 }
 
 .main-hand-image {
@@ -209,9 +209,16 @@
 
 .username {
   margin: 0 auto;
+  padding: 3px 0;
   max-width: 120px;
   border-radius: 5px;
   background: white;
   color: #555;
+  opacity: 0.7;
+  font-weight: bold;
   text-shadow: none;
+}
+
+.Invisible {
+  display: none;
 }
