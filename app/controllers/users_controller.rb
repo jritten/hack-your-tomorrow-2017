@@ -13,10 +13,10 @@ class UsersController < ApplicationController
         headers: { "Content-Type" => "application/json", "Accept" => "application/json"}
 
       })
-     @PrimaryIdentifier = user_detail["PrimaryIdentifier"]
-     @AvailableBalanceAmount = user_detail['BasicAccountDetail']['Balances']['AvailableBalanceAmount']
-     @CurrentBalanceAmount = user_detail['BasicAccountDetail']['Balances']['CurrentBalanceAmount']
-     @RedactedAccountNumber = user_detail["BasicAccountDetail"]["RedactedAccountNumber"]
+     # @PrimaryIdentifier = user_detail["PrimaryIdentifier"]
+     # # @AvailableBalanceAmount = user_detail['BasicAccountDetail']['Balances']['AvailableBalanceAmount']
+     # @CurrentBalanceAmount = user_detail['BasicAccountDetail']['Balances']['CurrentBalanceAmount']
+     # @RedactedAccountNumber = user_detail["BasicAccountDetail"]["RedactedAccountNumber"]
 
   end
 end
